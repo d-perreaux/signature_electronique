@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     getTargetPosition = (event) => {
         positionX = event.clientX - event.target.getBoundingClientRect().x;
-        positiony = event.clientY - event.target.getBoundingClientRect().y;
+        positionY = event.clientY - event.target.getBoundingClientRect().y;
 
-        return [positionX, positiony];
+        return [positionX, positionY];
     }
 
     handlePointerMove = (event) => {
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         ctx.moveTo(positionX, positionY);
     }
 
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 1;
     ctx.lineJoin = ctx.lineCap = "round";
 
     canvas.addEventListener("pointerdown", handlePointerDown, {passive: true});
